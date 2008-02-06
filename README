@@ -24,6 +24,7 @@ The string becomes tainted when it is read from IO, such as the data read from t
 The returned values from the following methods become untainted:
 
 - ERB::Util#h
+- ActionView::Helpers::TagHelper#escape
 - ActionView::Helpers::TextHelper#strip_tags
 
 Also, you can always untaint any string manually by calling "untaint" method (standard Ruby feature).
