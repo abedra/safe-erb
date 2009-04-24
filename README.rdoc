@@ -10,7 +10,7 @@ The check is done using "tainted?" method in Object class which is a standard fe
 
 Just put this plugin into vendor/plugins directory in your Rails application. No configuration is needed.
 
-Safe ERB works on Rails 1.2.x and 2.0.x. It has been tested using following database libraries:
+Safe ERB works on Rails 1.2.x, 2.0.x, 2.1.x, 2.2.x, and 2.3.x. It has been tested using following database libraries:
 
 - PostgreSQL (postgres-0.7.1 gem)
 - MySQL (mysql-2.7 gem)
@@ -31,4 +31,5 @@ Also, you can always untaint any string manually by calling "untaint" method (st
 
 == Contact
 
+Aaron Bedra <aaron at aaronbedra.com>
 Shinya Kasatani <kasatani at gmail.com>
