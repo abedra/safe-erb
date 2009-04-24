@@ -32,4 +32,5 @@ Also, you can always untaint any string manually by calling "untaint" method (st
 == Contact
 
 Aaron Bedra <aaron at aaronbedra.com>
+
 Shinya Kasatani <kasatani at gmail.com>
