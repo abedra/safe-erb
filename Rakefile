@@ -32,7 +32,7 @@ end
 if ENV["RUN_CODE_RUN"]
   task :default => "examples:multi_rails"
 else
-  task :default => "examples"
+  task :default => "examples:coverage"
 end
 
 desc 'Generate documentation for the safe_erb plugin.'

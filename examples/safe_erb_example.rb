@@ -1,7 +1,29 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "example_helper.rb"))
 
 describe "Safe ERB" do
+    
+  describe "ERB" do
   
+    describe "Util" do      
+      it "html_escape renders an untainted string" do
+        src = "<script>alert('hi');</script>"
+        out = ERB::Util.html_escape(src)
+        out.should == "&lt;script&gt;alert('hi');&lt;/script&gt;"
+        out.should_not be_tainted
+      end      
+    end
+  
+  end
+
+  describe "ActionView::Helpers::SanitizeHelper" do
+    pending "strip_tags_with_untaint renders an untainted string" do
+      src = "<script>alert('hi');</script>"
+      out = ActionView::Helpers::SanitizeHelper.strip_tags_with_untaint(src)
+      out.should == "&lt;script&gt;alert('hi');&lt;/script&gt;"
+      out.should_not be_tainted      
+    end    
+  end
+
   describe "render_with_checking_tainted" do
     it "test checking" do
       ERB.with_checking_tainted do
