@@ -8,9 +8,11 @@ The check is done using "tainted?" method in Object class which is a standard fe
 
 == Installation
 
-Just put this plugin into vendor/plugins directory in your Rails application. No configuration is needed.
+You can grab Safe ERB from github and put it in vendor/plugins, or just run 
 
-Safe ERB works on Rails 1.2.x, 2.0.x, 2.1.x, 2.2.x, and 2.3.x. It has been tested using following database libraries:
+	script/plugin install git://github.com/abedra/safe-erb
+
+Safe ERB works on Rails 2.0.x, 2.1.x, 2.2.x, and 2.3.x. It has been tested using following database libraries:
 
 - PostgreSQL (postgres-0.7.1 gem)
 - MySQL (mysql-2.7 gem)
