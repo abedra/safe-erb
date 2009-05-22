@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-gem "spicycode-micronaut", ">= 0.2.4"
+gem "spicycode-micronaut", ">= 0.2.8"
 require 'micronaut'
 require 'micronaut/rake_task'
 
