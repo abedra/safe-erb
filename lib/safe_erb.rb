@@ -7,7 +7,7 @@ class ActionController::Base
   # but it is not set in Mongrel and also functional / integration testing
   # so we'll set it anyways in the filter
   before_filter :taint_request
-  
+
   def render_with_checking_tainted(*args, &blk)
     if @skip_checking_tainted
       render_without_checking_tainted(*args, &blk)
@@ -21,7 +21,7 @@ class ActionController::Base
   alias_method_chain :render, :checking_tainted
 
   private
-  
+
   def taint_hash(hash)
     hash.each do |k, v|
       case v
@@ -32,7 +32,7 @@ class ActionController::Base
       end
     end
   end
-  
+
   def taint_request
     taint_hash(params)
     cookies.each do |k, v|
@@ -51,7 +51,7 @@ end
 class ERB
   cattr_accessor :check_tainted
   alias_method :original_set_eoutvar, :set_eoutvar
-  
+
   def self.with_checking_tainted(&block)
     # not thread safe
     ERB.check_tainted = true
@@ -61,7 +61,7 @@ class ERB
       ERB.check_tainted = false
     end
   end
-  
+
   def set_eoutvar(compiler, eoutvar = '_erbout')
     original_set_eoutvar(compiler, eoutvar)
     if check_tainted
@@ -72,18 +72,18 @@ class ERB
       end
     end
   end
-  
+
   module Util
     alias_method :html_escape_without_untaint, :html_escape
-    
+
     def html_escape(s)
       h = html_escape_without_untaint(s)
       h.untaint
       h
     end
-    
+
     alias_method :h, :html_escape
-    
+
     module_function :h
     module_function :html_escape
     module_function :html_escape_without_untaint
@@ -106,7 +106,7 @@ module ActionView
       def escape_once_with_untaint(html)
         escape_once_without_untaint(html).untaint
       end
-      
+
       alias_method_chain :escape_once, :untaint
     end
   end
