@@ -1,4 +1,4 @@
-# Safe ERB
+# Safe ERB [![Build Status](https://secure.travis-ci.org/abedra/safe-erb.png)](http://travis-ci.org/abedra/safe-erb?branch=master)
 
 ## Overview
 
